@@ -1,2 +1,31 @@
+spring:
+  profiles:
+    group:
+      local: port
+      #prod: common, port
+
+---
+spring:
+  config:
+    activate:
+      on-profile: common
+  integration:
+    channel:
+      auto-create: false
+---
+spring:
+  config:
+    activate:
+      on-profile: port
 server:
-  port: 10000
+  port: 13000
+---
+spring:
+  config:
+    activate:
+      on-profile: db
+  datasource:
+    password:
+
+
+
